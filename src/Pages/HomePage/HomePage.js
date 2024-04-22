@@ -153,24 +153,7 @@ const StuffedAnimals = function () {
     });
   }, []);
 
-  const listProduct = product.map((p) => {
-    return (
-      <div
-        className="w-full md:w-64 h-96 md:h-72 bg-white shadow-xl my-3 rounded-2xl flex flex-col gap-2"
-        data-aos="zoom-in"
-      >
-        <div className="flex justify-center">
-          <img src={teddy} alt="copy" className="w-72 md:w-40" />
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <h5 className="text-xl font-semibold"> {p.name} </h5>
-          <div className="w-24 h-8 bg-pink-300 text-white flex justify-center items-center rounded-full text-sm">
-            <span>{p.price}</span> USD
-          </div>
-        </div>
-      </div>
-    );
-  });
+  console.log(product);
 
   return (
     <div className="px-6 my-10">
@@ -181,7 +164,22 @@ const StuffedAnimals = function () {
           <UilArrowRight className="text-red-400" />
         </Link>
       </div>
-      <div className="flex flex-col md:flex-row md:gap-4">{listProduct}</div>
+      <div className="flex flex-col md:flex-row md:gap-4">
+        <div
+          className="w-full md:w-64 h-96 md:h-72 bg-white shadow-xl my-3 rounded-2xl flex flex-col gap-2"
+          data-aos="zoom-in"
+        >
+          <div className="flex justify-center">
+            <img src={teddy} alt="copy" className="w-72 md:w-40" />
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <h5 className="text-xl font-semibold"> Teddy bear </h5>
+            <div className="w-24 h-8 bg-pink-300 text-white flex justify-center items-center rounded-full text-sm">
+              <span>30.00</span> USD
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
