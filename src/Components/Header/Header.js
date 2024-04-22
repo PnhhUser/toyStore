@@ -33,7 +33,7 @@ const Nav = function () {
           y: 0,
         },
         to: {
-          y: 380,
+          y: 225,
         },
       });
     } else {
@@ -56,7 +56,10 @@ const Nav = function () {
         </div>
         <div className="w-2/3 flex justify-end items-center h-16 md:justify-between">
           <div className="hidden md:flex gap-6">
-            <NavLink className="px-3 py-5 hover:bg-pink-200 hover:text-white">
+            <NavLink
+              to="store"
+              className="px-3 py-5 hover:bg-pink-200 hover:text-white"
+            >
               Catalog
             </NavLink>
             <NavLink className="px-3 py-5 hover:bg-pink-200 hover:text-white">
@@ -85,9 +88,9 @@ const Nav = function () {
       </div>
       <animated.div
         style={{ ...navbar }}
-        className="flex flex-col md:hidden absolute -top-1/3 left-0 z-0 bg-white w-full"
+        className="flex flex-col md:hidden absolute -top-40 left-0 z-0 bg-white w-full"
       >
-        <NavLink to="catalog" className="border-b py-3 px-6">
+        <NavLink to="store" className="border-b py-3 px-6">
           Catalog
         </NavLink>
         <NavLink to="delivery" className="border-b py-3 px-6">

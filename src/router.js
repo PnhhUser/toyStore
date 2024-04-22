@@ -1,5 +1,7 @@
 import Layout from "./Components/Layout/Layout";
+import DetailToyPage from "./Pages/DetailToyPage/DetailToyPage";
 import HomePage from "./Pages/HomePage/HomePage";
+import StorePage from "./Pages/StorePage/StorePage";
 
 const {
   RouterProvider,
@@ -12,7 +14,9 @@ function Router() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />}></Route>
+        <Route index element={<HomePage />} />
+        <Route path="store" element={<StorePage />} />
+        <Route path="toy/:id" element={<DetailToyPage />} />
       </Route>
     )
   );

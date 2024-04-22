@@ -1,4 +1,5 @@
 import { Model, createServer } from "miragejs";
+import teddy from "./Assets/Images/toys/toy_1.png";
 
 createServer({
   models: {
@@ -17,7 +18,7 @@ createServer({
       height: 32,
       length: 21.5,
       weight: 24,
-      urlImg: "toy_1",
+      urlImg: teddy,
       type: "stuffed",
     });
     server.create("product", {
