@@ -27,6 +27,6 @@ const Breadcrumb = () => {
   );
 };
 
-const GGMap = () => {};
+// const GGMap = () => {};
 
-const ContactForm = () => {};
+// const ContactForm = () => {};
