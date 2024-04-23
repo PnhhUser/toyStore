@@ -69,7 +69,7 @@ const Banner = function () {
           Choose a toy for your baby
         </h1>
         <Link
-          to="/"
+          to="store"
           className="capitalize bg-pink-300 text-white h-12 w-44 rounded-full p-2 flex justify-center items-center"
         >
           Open catalog
@@ -100,14 +100,15 @@ const ShopNow = function () {
           <h3 className="text-white" style={{ fontSize: 22 }}>
             Stuffed Animals
           </h3>
-          <div
+          <Link
+            to="store"
             className="bg-white font-semibold w-28 h-10 rounded-full text-center leading-10 capitaliz"
             style={{
               color: "#ffc12c",
             }}
           >
             shop now
-          </div>
+          </Link>
         </div>
       </div>
       <div
@@ -122,14 +123,15 @@ const ShopNow = function () {
           <h3 className="text-white" style={{ fontSize: 22 }}>
             Wooden Toys
           </h3>
-          <div
+          <Link
+            to="store"
             className="bg-white font-semibold w-28 h-10 rounded-full text-center leading-10 capitaliz"
             style={{
               color: "#fb416b",
             }}
           >
             shop now
-          </div>
+          </Link>
         </div>
       </div>
     </div>
@@ -200,7 +202,7 @@ const WoodenToys = function () {
     <div className="px-6 my-10">
       <div className="flex items-center justify-between mb-2 pb-5 border-b-2">
         <h4 className="text-xl font-bold">Stuffed Animals</h4>
-        <Link to="/" className="flex border-b-2 border-red-400">
+        <Link to="store" className="flex border-b-2 border-red-400">
           <p className="text-red-400">see all toys</p>
           <UilArrowRight className="text-red-400" />
         </Link>

@@ -1,4 +1,7 @@
 import Layout from "./Components/Layout/Layout";
+import AboutPage from "./Pages/AboutPage/AboutPage";
+import ContactPage from "./Pages/ContactPage/ContactPage";
+import DeliveryPage from "./Pages/DeliveryPage/DeliveryPage";
 import DetailToyPage from "./Pages/DetailToyPage/DetailToyPage";
 import HomePage from "./Pages/HomePage/HomePage";
 import StorePage from "./Pages/StorePage/StorePage";
@@ -17,6 +20,9 @@ function Router() {
         <Route index element={<HomePage />} />
         <Route path="store" element={<StorePage />} />
         <Route path="toy/:id" element={<DetailToyPage />} />
+        <Route path="delivery" element={<DeliveryPage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<ContactPage />} />
       </Route>
     )
   );

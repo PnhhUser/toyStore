@@ -62,13 +62,22 @@ const Nav = function () {
             >
               Catalog
             </NavLink>
-            <NavLink className="px-3 py-5 hover:bg-pink-200 hover:text-white">
+            <NavLink
+              to="delivery"
+              className="px-3 py-5 hover:bg-pink-200 hover:text-white"
+            >
               Delivery
             </NavLink>
-            <NavLink className="px-3 py-5 hover:bg-pink-200 hover:text-white">
+            <NavLink
+              to="about"
+              className="px-3 py-5 hover:bg-pink-200 hover:text-white"
+            >
               About
             </NavLink>
-            <NavLink className="px-3 py-5 hover:bg-pink-200 hover:text-white">
+            <NavLink
+              to="contact"
+              className="px-3 py-5 hover:bg-pink-200 hover:text-white"
+            >
               Contact
             </NavLink>
           </div>
