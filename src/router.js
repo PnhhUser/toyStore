@@ -19,7 +19,7 @@ function Router() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="store" element={<StorePage />} />
-        <Route path="toy/:id" element={<DetailToyPage />} />
+        <Route path="store/toy/:id" element={<DetailToyPage />} />
         <Route path="delivery" element={<DeliveryPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="contact" element={<ContactPage />} />

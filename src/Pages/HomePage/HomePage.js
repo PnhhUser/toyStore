@@ -4,7 +4,7 @@ import bg from "../../Assets/Images/image/img_7.jpg";
 import bgAbout from "../../Assets/Images/image/img_8.jpg";
 import teddy from "../../Assets/Images/toys/toy_1.png";
 import flower from "../../Assets/Images/toys/toy_2.png";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { UilArrowRight } from "@iconscout/react-unicons";
@@ -14,6 +14,7 @@ import instagram_3 from "../../Assets/Images/image/img_3.jpg";
 import instagram_4 from "../../Assets/Images/image/img_4.jpg";
 import instagram_5 from "../../Assets/Images/image/img_5.jpg";
 import instagram_6 from "../../Assets/Images/image/img_6.jpg";
+import { useProducts } from "../../Context/productContext";
 
 const instagrams = [
   instagram_1,
@@ -139,15 +140,7 @@ const ShopNow = function () {
 };
 
 const StuffedAnimals = function () {
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/product")
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data.products);
-      });
-  }, []);
+  const { products } = useProducts();
 
   useEffect(() => {
     Aos.init({
@@ -155,12 +148,14 @@ const StuffedAnimals = function () {
     });
   }, []);
 
-  const stuffed = product?.filter((p) => p.type === "stuffed");
+  const stuffed = products.init?.filter((p) => p.type === "stuffed");
 
-  const listStuffed = stuffed?.map((s) => {
+  const positionDefaultstuffed = stuffed?.slice(0, 5);
+
+  const listStuffed = positionDefaultstuffed?.map((s) => {
     return (
       <Link
-        to="/toy/1"
+        to={`store/toy/${s.id}`}
         className="w-full md:w-64 h-96 md:h-72 bg-white shadow-xl my-3 rounded-2xl flex flex-col gap-2"
         data-aos="zoom-in"
         key={s.id}
@@ -168,8 +163,8 @@ const StuffedAnimals = function () {
         <div className="flex justify-center">
           <img src={s.urlImg} alt="copy" className="w-72 md:w-40" />
         </div>
-        <div className="flex flex-col items-center gap-2">
-          <h5 className="text-xl font-semibold"> {s.name} </h5>
+        <div className="flex flex-col items-center gap-2 md:mt-5">
+          <h5 className="text-xl"> {s.name} </h5>
           <div className="w-24 h-8 bg-pink-300 text-white flex justify-center items-center rounded-full text-sm">
             <span>{s.price}</span> USD
           </div>
@@ -187,12 +182,47 @@ const StuffedAnimals = function () {
           <UilArrowRight className="text-red-400" />
         </Link>
       </div>
-      <div className="flex flex-col md:flex-row md:gap-4">{listStuffed}</div>
+      <div className="flex flex-col md:flex-row md:gap-4 md:justify-center">
+        {listStuffed}
+      </div>
     </div>
   );
 };
 
 const WoodenToys = function () {
+  const { products } = useProducts();
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+    });
+  }, []);
+
+  const wooden = products.init?.filter((p) => p.type === "wooden");
+
+  const positionDefaultWooden = wooden?.slice(0, 5);
+
+  const listWooden = positionDefaultWooden?.map((w) => {
+    return (
+      <Link
+        key={w.id}
+        to={`store/toy/${w.id}`}
+        className="w-full md:w-64 h-96 md:h-72 bg-white shadow-xl my-3 rounded-2xl flex flex-col gap-2"
+        data-aos="zoom-in"
+      >
+        <div className="flex justify-center">
+          <img src={w.urlImg} alt="copy" className="w-72 md:w-40" />
+        </div>
+        <div className="flex flex-col items-center gap-2 md:mt-5">
+          <h5 className="text-xl">{w.name}</h5>
+          <div className="w-24 h-8 bg-pink-300 text-white flex justify-center items-center rounded-full text-sm">
+            <span>{w.price}</span> USD
+          </div>
+        </div>
+      </Link>
+    );
+  });
+
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -207,22 +237,8 @@ const WoodenToys = function () {
           <UilArrowRight className="text-red-400" />
         </Link>
       </div>
-      <div className="flex flex-col md:flex-row md:gap-4">
-        <Link
-          to="/toy/1"
-          className="w-full md:w-64 h-96 md:h-72 bg-white shadow-xl my-3 rounded-2xl flex flex-col gap-2"
-          data-aos="zoom-in"
-        >
-          <div className="flex justify-center">
-            <img src={flower} alt="copy" className="w-72 md:w-40" />
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <h5 className="text-xl font-semibold"> Teddy bear </h5>
-            <div className="w-24 h-8 bg-pink-300 text-white flex justify-center items-center rounded-full text-sm">
-              <span>30.00</span> USD
-            </div>
-          </div>
-        </Link>
+      <div className="flex flex-col md:flex-row md:gap-4 md:justify-center">
+        {listWooden}
       </div>
     </div>
   );
