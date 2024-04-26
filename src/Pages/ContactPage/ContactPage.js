@@ -1,12 +1,15 @@
 import { Form, Link, NavLink } from "react-router-dom";
-import { UilFacebookF } from "@iconscout/react-unicons";
-import { UilTwitter } from "@iconscout/react-unicons";
-import { UilInstagramAlt } from "@iconscout/react-unicons";
-import { UilYoutube } from "@iconscout/react-unicons";
+import {
+  UilFacebookF,
+  UilArrowCircleLeft,
+  UilYoutube,
+  UilInstagramAlt,
+  UilTwitter,
+} from "@iconscout/react-unicons";
 
 export default function ContactPage() {
   return (
-    <div className="px-4">
+    <div className="ps-2 pe-4">
       <Breadcrumb />
       <ContactForm />
     </div>
@@ -17,16 +20,10 @@ const Breadcrumb = () => {
   return (
     <div className="flex h-8 mt-6 my-2 gap-1">
       <Link
-        className="text-sm bg-pink-300 text-white h-8 w-auto ps-2 pe-4 text-center leading-8 rounded-e-xl"
         to="/"
+        className="bg-pink-300 text-white h-8 w-auto ps-2 pe-4 rounded-e-xl flex items-center"
       >
-        Home
-      </Link>
-      <Link
-        className="text-sm bg-pink-300 text-white h-8 w-auto ps-2 pe-4 text-center leading-8 rounded-e-xl"
-        to="/"
-      >
-        Contact
+        <UilArrowCircleLeft />
       </Link>
     </div>
   );

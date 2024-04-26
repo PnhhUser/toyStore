@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { UilArrowCircleLeft } from "@iconscout/react-unicons";
 
 export default function DeliveryPage() {
   return (
-    <div className="px-4 my-10 ">
+    <div className="ps-2 pe-4">
       <Breadcrumb />
       <div className="shadow-xl mt-5">
         <DeliveryInfo />
@@ -16,16 +17,10 @@ const Breadcrumb = () => {
   return (
     <div className="flex h-8 mt-6 my-2 gap-1">
       <Link
-        className="text-sm bg-pink-300 text-white h-8 w-auto ps-2 pe-4 text-center leading-8 rounded-e-xl"
         to="/"
+        className="bg-pink-300 text-white h-8 w-auto ps-2 pe-4 rounded-e-xl flex items-center"
       >
-        Home
-      </Link>
-      <Link
-        className="text-sm bg-pink-300 text-white h-8 w-auto ps-2 pe-4 text-center leading-8 rounded-e-xl"
-        to="/"
-      >
-        Delivery
+        <UilArrowCircleLeft />
       </Link>
     </div>
   );
@@ -49,7 +44,7 @@ const DeliveryInfo = () => {
 
 const Instruction = () => {
   return (
-    <div className="flex flex-col justify-center px-6 md:px-60 p-10">
+    <div className="flex flex-col justify-center px-6 p-10">
       <h2 className="text-3xl"> Instruction </h2>
       <div>
         <div className="relative max-w-sm">

@@ -2,23 +2,14 @@ import { UilShoppingCart, UilBars } from "@iconscout/react-unicons";
 import { useSpring, animated } from "@react-spring/web";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-// const categories = [
-//   { id: 1, name: "Catalog" },
-//   { id: 2, name: "Delivery" },
-//   { id: 3, name: "About" },
-//   { id: 4, name: "Contact" },
-// ];
 
 export default function Header() {
-  // const listCategoies = categories.map((category) => {
-  //   return <li key={category.id}>{category.name}</li>;
-  // });
-
   return <Nav />;
 }
 
 const Nav = function () {
   const [isOpen, setIsOpen] = useState(true);
+
   const [navbar, api] = useSpring(() => {
     return {
       from: { y: 0 },

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
 import bg from "../../Assets/Images/image/img_7.jpg";
 import bgAbout from "../../Assets/Images/image/img_8.jpg";
@@ -141,6 +141,7 @@ const ShopNow = function () {
 
 const StuffedAnimals = function () {
   const { products } = useProducts();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     Aos.init({
@@ -159,6 +160,7 @@ const StuffedAnimals = function () {
         className="w-full md:w-64 h-96 md:h-72 bg-white shadow-xl my-3 rounded-2xl flex flex-col gap-2"
         data-aos="zoom-in"
         key={s.id}
+        state={{ back: searchParams.get("type") }}
       >
         <div className="flex justify-center">
           <img src={s.urlImg} alt="copy" className="w-72 md:w-40" />
@@ -191,6 +193,7 @@ const StuffedAnimals = function () {
 
 const WoodenToys = function () {
   const { products } = useProducts();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     Aos.init({
@@ -209,6 +212,7 @@ const WoodenToys = function () {
         to={`store/toy/${w.id}`}
         className="w-full md:w-64 h-96 md:h-72 bg-white shadow-xl my-3 rounded-2xl flex flex-col gap-2"
         data-aos="zoom-in"
+        state={{ back: searchParams.get("type") }}
       >
         <div className="flex justify-center">
           <img src={w.urlImg} alt="copy" className="w-72 md:w-40" />

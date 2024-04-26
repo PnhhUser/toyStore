@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import img from "../../Assets/Images/image/img_8.jpg";
 import { useEffect } from "react";
 import Aos from "aos";
+import { UilArrowCircleLeft } from "@iconscout/react-unicons";
 
 export default function AboutPage() {
   return (
-    <div className="px-4">
+    <div className="ps-2 pe-4">
       <Breadcrumb />
       <Intro />
     </div>
@@ -16,16 +17,10 @@ const Breadcrumb = () => {
   return (
     <div className="flex h-8 mt-6 my-2 gap-1">
       <Link
-        className="text-sm bg-pink-300 text-white h-8 w-auto ps-2 pe-4 text-center leading-8 rounded-e-xl"
         to="/"
+        className="bg-pink-300 text-white h-8 w-auto ps-2 pe-4 rounded-e-xl flex items-center"
       >
-        Home
-      </Link>
-      <Link
-        className="text-sm bg-pink-300 text-white h-8 w-auto ps-2 pe-4 text-center leading-8 rounded-e-xl"
-        to="/"
-      >
-        About
+        <UilArrowCircleLeft />
       </Link>
     </div>
   );
